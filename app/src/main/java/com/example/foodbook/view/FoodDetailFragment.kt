@@ -17,7 +17,7 @@ class FoodDetailFragment : Fragment() {
     private var _binding: FragmentFoodDetailBinding? = null
     private val binding get() = _binding!!
     private lateinit var viewModel: FoodDetailViewModel
-    var foodId = 0
+    private var foodId = 0
 
 
     override fun onCreateView(

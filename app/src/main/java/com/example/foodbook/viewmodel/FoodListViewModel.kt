@@ -46,7 +46,7 @@ class FoodListViewModel(application: Application) : AndroidViewModel(application
             withContext(Dispatchers.Main) {
                 foodLoading.value = false
                 showFood(foodList)
-                Toast.makeText(getApplication(),"From Room", Toast.LENGTH_LONG).show()
+                Toast.makeText(getApplication(), "From Room", Toast.LENGTH_LONG).show()
             }
         }
     }

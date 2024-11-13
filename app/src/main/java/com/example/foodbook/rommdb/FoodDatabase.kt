@@ -13,20 +13,18 @@ abstract class FoodDatabase : RoomDatabase() {
     companion object {
 
         @Volatile
-        private var instance : FoodDatabase? = null
+        private var instance: FoodDatabase? = null
 
         private val lock = Any()
 
-        operator  fun invoke(context: Context) = instance ?: synchronized(lock) {
+        operator fun invoke(context: Context) = instance ?: synchronized(lock) {
             instance ?: createDatabase(context).also {
                 instance = it
             }
         }
 
         private fun createDatabase(context: Context) = Room.databaseBuilder(
-            context.applicationContext,
-            FoodDatabase::class.java,
-            "FoodDatabase"
+            context.applicationContext, FoodDatabase::class.java, "FoodDatabase"
         ).build()
 
     }

@@ -1,5 +1,6 @@
 package com.example.foodbook.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.Navigation
@@ -26,6 +27,7 @@ class FoodRecyclerAdapter(val foodList: ArrayList<Food>) :
         return foodList.size
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     fun foodListUpdate(newFoodList: List<Food>) {
         foodList.clear()
         foodList.addAll(newFoodList)
@@ -42,8 +44,7 @@ class FoodRecyclerAdapter(val foodList: ArrayList<Food>) :
         }
 
         holder.binding.imageView.downloadImage(
-            foodList[position].image,
-            placeHolder(holder.itemView.context)
+            foodList[position].image, placeHolder(holder.itemView.context)
         )
     }
 }

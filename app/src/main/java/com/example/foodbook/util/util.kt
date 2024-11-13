@@ -8,13 +8,8 @@ import com.bumptech.glide.request.RequestOptions
 import com.example.foodbook.R
 
 fun ImageView.downloadImage(url: String, placeholder: CircularProgressDrawable) {
-    val options = RequestOptions()
-        .placeholder(placeholder)
-        .error(R.drawable.ic_launcher_background)
-    Glide.with(context)
-        .setDefaultRequestOptions(options)
-        .load(url)
-        .into(this)
+    val options = RequestOptions().placeholder(placeholder).error(R.drawable.ic_launcher_background)
+    Glide.with(context).setDefaultRequestOptions(options).load(url).into(this)
 }
 
 fun placeHolder(context: Context): CircularProgressDrawable {
